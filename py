@@ -1,6 +1,6 @@
 #local de armazenamento de banco de dados
 from datetime import datetime
-from app import database
+#from app import database
 
 #entidades
 #lazy: mostra todos os atributos do autor de forma direta
