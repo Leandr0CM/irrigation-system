@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+{%include 'navbar.html' %}
+
+<!--configurações-->
+
+<h1 class="text-center mt-2">Configurações</h1>
+<div class="row justify-content-start">
+    <div class="container bg-success bg-opacity-10 col-4 mt-4  rounded" style="height: 17rem;">
+        <div class="container">
+            <div class="text-center bg-success text-white fw-bolder rounded">
+                <h1>Comandos</h1>
+            </div>
+        </div>
+            <form class="input-group mb-3 flex-column" method="POST">
+                <div class="row justify-content-center">
+                    <label class="form-label mt-2 text-center">Tempo de espera</label>
+                        <input type="number" class="form-control ms-2 " aria-label="Username" style="width: 15%;"
+                        aria-describedby="basic-addon1">
+                    <select class="form-select ms-2" id="inputGroupSelect01" style="width: 8rem;">
+                        <option selected>Tipo</option>
+                        <option value="1">Segundos</option>
+                        <option value="2">Minutos</option>
+                    </select>
+                </div>
+
+                <div class="row justify-content-center">
+                    <label class="form-label mt-2 text-center">Tempo Ligado</label>
+                    <input type="number" class="form-control " aria-label="Username" style="width: 15%;"
+                        aria-describedby="basic-addon1">
+                    <select class="form-select ms-2" id="inputGroupSelect02" style="width: 8rem;">
+                        <option selected>Tipo</option>
+                        <option value="1">Segundos</option>
+                        <option value="2">Minutos</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary rounded mt-2 fw-bold">Enviar</button>
+            </form>
+    </div>
+
+    <!--historico-->
+
+    <div class="container bg-success bg-opacity-10 col-4 mt-4  rounded justify-content-start" style="height: 28rem;">
+        <div class="container">
+            <div class="text-center bg-success text-white fw-bolder rounded">
+                <h1>Histórico</h1>
+            </div>
+        </div>
+        <div class="container overflow-auto bg-white text-black mh-90" style="width: 90%; height: 85%;">
+            <p></p>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
