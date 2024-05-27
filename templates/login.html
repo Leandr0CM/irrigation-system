@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body class="bg-light overflow-hidden">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!--navbar(header)-->
+    <nav class="navbar navbar-expand-lg bg-success">
+        <div class="container-fluid">
+
+            <a class="navbar-brand text-white" href="#">SmartSprout</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+
+                <a type="button" class="btn btn-primary" href="/login">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!--Botão das nav de login e cadastro-->
+    <div class="container bg-success bg-opacity-10 col-4 mt-5  rounded justify-content-start"
+        style="width: 30rem; height: 20rem;">
+        <div class="container">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-login-tab" data-bs-toggle="tab" data-bs-target="#nav-login"
+                        type="button" role="tab" aria-controls="nav-login" aria-selected="true">Login</button>
+
+                    <button class="nav-link" id="nav-cadastro-tab" data-bs-toggle="tab" data-bs-target="#nav-cadastro"
+                        type="button" role="tab" aria-controls="nav-cadastro" aria-selected="true">Cadastro</button>
+                </div>
+
+            </nav>
+
+            
+            <div class="tab-content" id="nav-tabContent">
+                
+                <!--Inputs Login-->
+
+                <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+                    <form class="input-group mb-3 flex-column">
+                        <div>
+                            <label class="form-label mt-2">Usuário</label>
+                            <input type="text" class="form-control" placeholder="Nome de usuário" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="mb-5">
+                            <label for="inputPassword5" class="form-label">Senha</label>
+                            <input type="password" id="inputPassword5" class="form-control"
+                                placeholder="Digite sua senha" aria-describedby="passwordHelpBlock">
+                        </div>
+
+                        <a type="button" class="btn btn-primary rounded mt-2 fw-bold" href="/home" >Entrar</a>
+                    </form>
+                </div>
+                
+                <!--Inputs Cadastro-->
+
+                <div class="tab-pane fade" id="nav-cadastro" role="tabpanel" aria-labelledby="nav-cadastro-tab">
+
+                    <form class="input-group mb-3 flex-column">
+                        
+                        <div>
+                            <label class="form-label mt-2">Usuário</label>
+                            <input type="text" class="form-control" name="user" placeholder="Nome de usuário" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+
+                        <div>
+                            <label class="form-label">Senha</label>
+                            <input type="password" class="form-control"
+                                placeholder="Digite sua senha" aria-describedby="passwordHelpBlock"
+                                name="password">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Confirmar senha</label>
+                            <input type="password" class="form-control" placeholder="Confirme sua senha"
+                                aria-describedby="passwordHelpBlock" name="password" >
+                        </div>
+
+                        <a type="submit" class="btn btn-primary rounded fw-bold" href="/login">Cadastrar-se</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
