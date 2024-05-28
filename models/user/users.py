@@ -12,11 +12,11 @@ class User(db.Model):
 
     def get_single_user(name, password):
         user = User.query.filter(User.name == name and User.password == password).first()
-        return [user]
+        return user
 
-    def insert_user(name, password, role):
-        role = Role.query.filter_by(Role.identifier = role).first()
-        user = User(name=name, password=password, id_role=role)
+    def insert_user(name, password, identifier):
+        role = Role.query.filter_by(identifier=identifier).first()
+        user = User(name=name, password=password, id_role=role.id)
 
         db.session.add(user)
         db.session.commit()

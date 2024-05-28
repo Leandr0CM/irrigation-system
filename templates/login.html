@@ -74,11 +74,11 @@
 
                 <div class="tab-pane fade" id="nav-cadastro" role="tabpanel" aria-labelledby="nav-cadastro-tab">
 
-                    <form class="input-group mb-3 flex-column">
-                        
+                    <form class="input-group mb-3 flex-column" action="/insert_user_register" method="post">
+
                         <div>
                             <label class="form-label mt-2">Usuário</label>
-                            <input type="text" class="form-control" name="user" placeholder="Nome de usuário" aria-label="Username"
+                            <input type="text" class="form-control" name="name" placeholder="Nome de usuário" aria-label="Username"
                                 aria-describedby="basic-addon1">
                         </div>
 
@@ -92,10 +92,10 @@
                         <div class="mb-3">
                             <label class="form-label">Confirmar senha</label>
                             <input type="password" class="form-control" placeholder="Confirme sua senha"
-                                aria-describedby="passwordHelpBlock" name="password" >
+                                aria-describedby="passwordHelpBlock" name="same_password" >
                         </div>
 
-                        <a type="submit" class="btn btn-primary rounded fw-bold" href="/login">Cadastrar-se</a>
+                        <input type="submit" class="btn btn-primary rounded mt-2 fw-bold" value="Cadastrar-se">
                     </form>
                 </div>
             </div>
