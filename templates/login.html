@@ -53,20 +53,20 @@
                 <!--Inputs Login-->
 
                 <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
-                    <form class="input-group mb-3 flex-column">
+                    <form class="input-group mb-3 flex-column" action="/check_user" method="post">
                         <div>
                             <label class="form-label mt-2">Usuário</label>
                             <input type="text" class="form-control" placeholder="Nome de usuário" aria-label="Username"
-                                aria-describedby="basic-addon1">
+                                aria-describedby="basic-addon1" name="name">
                         </div>
 
                         <div class="mb-5">
                             <label for="inputPassword5" class="form-label">Senha</label>
                             <input type="password" id="inputPassword5" class="form-control"
-                                placeholder="Digite sua senha" aria-describedby="passwordHelpBlock">
+                                placeholder="Digite sua senha" aria-describedby="passwordHelpBlock" name="password">
                         </div>
 
-                        <a type="button" class="btn btn-primary rounded mt-2 fw-bold" href="/home" >Entrar</a>
+                        <input type="submit" class="btn btn-primary rounded mt-2 fw-bold" value="Entrar">
                     </form>
                 </div>
                 
