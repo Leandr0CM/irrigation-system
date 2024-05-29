@@ -14,9 +14,14 @@ class User(db.Model):
         user = User.query.filter(User.name == name and User.password == password).first()
         return user
 
+    def get_all_users():
+        users = User.query.with_entities(User.name, User.password, User.id_role).all()
+        return users
+
     def insert_user(name, password, identifier):
         role = Role.query.filter_by(identifier=identifier).first()
         user = User(name=name, password=password, id_role=role.id)
 
         db.session.add(user)
         db.session.commit()
+

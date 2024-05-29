@@ -22,3 +22,7 @@ def create_db(app: Flask):
         for key, value in PRIMARY_USERS.items():
             print(PRIMARY_USERS[key])
             User.insert_user(key, PRIMARY_USERS[key][0], PRIMARY_USERS[key][1])
+
+        users = User.get_all_users()
+        print(users)
+
