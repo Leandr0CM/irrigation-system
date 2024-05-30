@@ -10,6 +10,7 @@ class User(db.Model):
     name = db.Column("name", db.String(255), nullable=False)
     password = db.Column("password", db.String(255), nullable=False)
     id_role = db.Column("role", db.Integer, db.ForeignKey(Role.id), nullable=False)
+    is_activated = db.Column("active", db.Boolean, nullable=False, default=True)
 
 
     def get_single_user(name, password):
@@ -18,8 +19,7 @@ class User(db.Model):
 
     def get_all_users():
         #filtro a partir de determinados atributos
-        #users = User.query.with_entities(User.name, User.password, User.id_role).all()
-        users = User.query.all()
+        users = User.query.filter(User.is_activated != False)
         return users
 
     def insert_user(name, password, identifier):
@@ -28,4 +28,13 @@ class User(db.Model):
 
         db.session.add(user)
         db.session.commit()
+
+    def desactivate_user(name):
+
+        user = User.query.filter(User.name == name).first()
+
+        if user is not None:
+            user.is_activated = False
+
+            return User.get_all_users()
 

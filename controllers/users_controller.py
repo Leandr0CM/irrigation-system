@@ -66,3 +66,15 @@ def insert_user_gestao():
 
     return render_template("gestao.html", users=users)
 
+@user_.route("/desactivate_user", methods=['POST'])
+def desactivate_user():
+
+    name = request.form.get("name")
+    password = request.form.get("password")
+    identifier = request.form.get("select_identifier")
+
+    User.insert_user(name, password, identifier)
+    users = User.get_all_users()
+
+    return render_template("gestao.html", users=users)
+

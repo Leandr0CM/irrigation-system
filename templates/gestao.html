@@ -42,8 +42,9 @@ margin-right: 1rem;
 
 
         {% for user in users %}
-            <div class="bg-white text-black border border-2 border-secondary border-end-0 mb-1" style="height:4rem;"
-                id="celulaUsuario">
+            <div class="bg-white text-black border border-2 border-secondary border-end-0 mb-1"
+                 style="height:4rem;"
+                id="celulaUsuario{{user.id}}">
                 <p>ID: {{ user.id }}</p>
                 <p>Nome: {{ user.name }}</p>
             </div>
@@ -54,7 +55,7 @@ margin-right: 1rem;
         <div class="flex-grow-1">
             <div class="d-flex justify-content-between align-items-center mt-2">
                 <h1 class="text-center flex-grow-1">Informações Gerais</h1>
-                <a type="button" class="btn btn-danger me-3" id="excluirButton" href="#">Excluir</a>
+                <a type="button" class="btn btn-danger me-3" id="excluirButton" href="#">Desativar</a>
             </div>
 
             <!--Mostra o nome,ID e o botão de editar-->
@@ -64,9 +65,10 @@ margin-right: 1rem;
                     <p class="mt-2 ms-1">ID: 1234</p>
                     <p class="ms-1">Nome: Leandro</p>
                 </div>
-                <a type="button" class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                    href="#">Editar</a>
+                <input type="submit" class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    name="/edit_user" value="Editar"/>
             </div>
+
             <h2 class="text-center">Aparelhos</h2>
 
             <!-- Adiciona um contêiner com rolagem para os kits -->
@@ -169,8 +171,11 @@ margin-right: 1rem;
     </div>
 
     <script>
-        document.getElementById("celulaUsuario").addEventListener("click", function () {
-            document.getElementById("usuarioInterface").classList.remove("hidden");
+        document.getElementById("celulaUsuario" + id)
+        .addEventListener(
+        "click",
+        function (id, name) {
+            document.getElementById("usuarioInterface" + id").classList.remove("hidden");
         });
 
         //script para a adição dos kits

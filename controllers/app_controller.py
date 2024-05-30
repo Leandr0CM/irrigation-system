@@ -2,6 +2,8 @@ from flask import Flask
 from models.db import db, instance
 from controllers.users_controller import user_
 from controllers.sensors_controller import sensor_
+from controllers.actuators_controller import actuator_
+
 
 from flask_mqtt import Mqtt
 
@@ -14,6 +16,7 @@ def create_app():
 
     app.register_blueprint(user_, url_prefix='/')
     app.register_blueprint(sensor_, url_prefix='/')
+    app.register_blueprint(actuator_, url_prefix='/')
 
 
     # configura o banco de dados
