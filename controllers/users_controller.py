@@ -1,9 +1,8 @@
 from flask import Blueprint, render_template, request
 from models.user.users import User
 
-user_ = Blueprint("user", __name__, template_folder='templates')
 
-GLOBAL_ROLES = ['Admin', 'Estatístico', 'Operador']
+user_ = Blueprint("user", __name__, template_folder='templates')
 
 
 @user_.route("/")
@@ -49,3 +48,21 @@ def insert_user_register():
 @user_.route("/home")
 def home():
     return render_template("home.html")
+
+@user_.route("/gestao")
+def gestao():
+    users = User.get_all_users()
+    return render_template("gestao.html", users=users)
+
+@user_.route("/insert_user_gestao", methods=['POST'])
+def insert_user_gestao():
+
+    name = request.form.get("name")
+    password = request.form.get("password")
+    identifier = request.form.get("select_identifier")
+
+    User.insert_user(name, password, identifier)
+    users = User.get_all_users()
+
+    return render_template("gestao.html", users=users)
+

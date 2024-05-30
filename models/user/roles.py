@@ -8,6 +8,7 @@ class Role(db.Model):
     #vários usuários associados a uma role (tabela, atributo, todas as informações)
     users = db.relationship("User", backref='role', lazy=True)
 
+    #usado apenas uma vez
     def insert_role(identifier):
         role = Role(identifier=identifier)
         db.session.add(role)

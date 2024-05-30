@@ -1,6 +1,8 @@
-from flask import Flask, render_template
+from flask import Flask
 from models.db import db, instance
 from controllers.users_controller import user_
+from controllers.sensors_controller import sensor_
+
 from flask_mqtt import Mqtt
 
 
@@ -10,12 +12,15 @@ def create_app():
                 template_folder="./templates/",  # deve estar no root por padrão
                 )
 
+    app.register_blueprint(user_, url_prefix='/')
+    app.register_blueprint(sensor_, url_prefix='/')
+
+
     # configura o banco de dados
     app.config['TESTING'] = False
     app.config['SECRET_KEY'] = 'generated-secret-key'
     app.config['SQLALCHEMY_DATABASE_URI'] = instance
 
-    app.register_blueprint(user_, url_prefix='/')
 
     db.init_app(app)
 

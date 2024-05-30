@@ -3,6 +3,7 @@ from models.user.roles import Role
 
 #https://www.youtube.com/watch?v=7AkJvQXOjYg
 
+
 class User(db.Model):
     __tablename__ = "users"
     id = db.Column('id', db.Integer, primary_key=True, autoincrement=True)
@@ -10,12 +11,15 @@ class User(db.Model):
     password = db.Column("password", db.String(255), nullable=False)
     id_role = db.Column("role", db.Integer, db.ForeignKey(Role.id), nullable=False)
 
+
     def get_single_user(name, password):
         user = User.query.filter(User.name == name and User.password == password).first()
         return user
 
     def get_all_users():
-        users = User.query.with_entities(User.name, User.password, User.id_role).all()
+        #filtro a partir de determinados atributos
+        #users = User.query.with_entities(User.name, User.password, User.id_role).all()
+        users = User.query.all()
         return users
 
     def insert_user(name, password, identifier):
