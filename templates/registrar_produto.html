@@ -1,0 +1,27 @@
+<!--register_actuator.html -->
+{% extends"base.html" %}
+{% block content%}
+<div class="vertical-center">
+    <div class="container position-absolute top-50 start-50 translate-middle">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-body">
+                    <form action = "/adicionar_produto" method = "post">
+                        <p>Produto:</p>
+                        <p><input type = "text" name = "name" placeholder="Nome..." required/></p>
+                        <p>Sensor Ultrassônico:</p>
+                        <p><input type = "text" name = "ultrassonic_sensor" placeholder="Nome..." required/></p>
+                        <p>Sensor de Umidade:</p>
+                        <p><input type = "text" name = "moisture_sensor" placeholder="Nome..." required/></p>
+                        <p>Mini-bomba d´água:</p>
+                        <p><input type = "text" name = "pump_water" placeholder="Nome..." required/></p>
+                        <p>Relê:</p>
+                        <p><input type = "text" name = "relay" placeholder="Nome..." required/></p>
+                        <p><input type = "submit" value = "Cadastrar" /></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}

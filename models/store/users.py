@@ -1,11 +1,7 @@
 from models.db import db
-from models.user.roles import Role
-
-#https://www.youtube.com/watch?v=7AkJvQXOjYg
-
 
 class User(db.Model):
-    __tablename__ = "users"
+    __tablename__ = "user"
     id = db.Column('id', db.Integer, primary_key=True, autoincrement=True)
     name = db.Column("name", db.String(255), nullable=False)
     password = db.Column("password", db.String(255), nullable=False)
@@ -30,11 +26,14 @@ class User(db.Model):
         db.session.commit()
 
     def desactivate_user(name):
-
         user = User.query.filter(User.name == name).first()
 
         if user is not None:
             user.is_activated = False
 
+            db.session.add(user)
+            db.session.commit()
+
             return User.get_all_users()
+
 
